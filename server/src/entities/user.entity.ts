@@ -17,12 +17,6 @@ export class User extends BaseEntity {
   @Column()
   password!: string
 
-  @Column({ default: false })
-  isVerified!: boolean
-
-  @Column({ default: false })
-  isAdmin!: boolean
-
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt!: Date
 
