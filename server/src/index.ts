@@ -5,6 +5,7 @@ import 'reflect-metadata'
 import { buildSchema } from 'type-graphql'
 import { connectToDatabase } from './config/dataSource'
 import { HelloResolver } from './resolvers/helloResolver'
+import { userResolver } from './resolvers/userResolver'
 
 const main = async () => {
   console.log('startin server up.....')
@@ -12,7 +13,7 @@ const main = async () => {
   await connectToDatabase()
 
   const schema = await buildSchema({
-    resolvers: [HelloResolver]
+    resolvers: [HelloResolver, userResolver]
     // emitSchemaFile: true
   })
   console.info('GraphQl schema build successfully......')
